@@ -26,6 +26,33 @@
       "priority": "low",
       "dueDate": "2026-06-15",
       "assignedTo": "Charlie"
+    },
+    {
+      "id": 4,
+      "title": "Setup database",
+      "description": "Configure PostgreSQL database and schemas",
+      "status": "in_progress",
+      "priority": "high",
+      "dueDate": "2026-06-18",
+      "assignedTo": "David"
+    },
+    {
+      "id": 5,
+      "title": "Create documentation",
+      "description": "Write project setup and API documentation",
+      "status": "pending",
+      "priority": "medium",
+      "dueDate": "2026-06-28",
+      "assignedTo": "Emma"
+    },
+    {
+      "id": 6,
+      "title": "Deploy application",
+      "description": "Deploy the application to production environment",
+      "status": "pending",
+      "priority": "high",
+      "dueDate": "2026-06-30",
+      "assignedTo": "Frank"
     }
   ]
 }

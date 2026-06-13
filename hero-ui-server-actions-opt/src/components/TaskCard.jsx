@@ -5,7 +5,7 @@ const TaskCard = ({task}) => {
     const {title,description} = task;
     return (
         <div>
-                <Card className="w-100 bg-emerald-900">
+                <Card className="w-100 ">
       <CircleDollar aria-label="Dollar sign icon" className="text-primary size-6" role="img" />
       <Card.Header>
         <Card.Title>{title}</Card.Title>

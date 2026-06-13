@@ -3,7 +3,7 @@
 export default function Home() {
   return (
 <div>
-  <button className="btn btn-error">Daisy UI</button>
+ <h2 className="text-center text-3xl">Home Page</h2>
 </div>
 
   );
