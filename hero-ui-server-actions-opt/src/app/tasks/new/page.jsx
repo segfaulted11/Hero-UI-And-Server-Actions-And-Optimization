@@ -1,3 +1,4 @@
+"use client";
 import { CreateATask } from "@/lib/actions";
 import {
     Button,
@@ -7,6 +8,8 @@ import {
     TextField,
     ListBox,
     Select,
+    Form,
+    FieldError,
 } from "@heroui/react";
 
 const NewTask = () => {
@@ -14,15 +17,30 @@ const NewTask = () => {
         <div className="w-1/2 mx-auto">
             <h2 className="tetx-3xl text-center">Add A New Task</h2>
             <div>
-                <form action={CreateATask} className="flex flex-col gap-4">
+                <Form action={CreateATask} className="flex flex-col gap-4">
                     <TextField
                         className="w-full"
                         name="title"
                         type="text"
                         variant="secondary"
+                           minLength={8}
+                        isRequired
+                        validate={(value) => {
+                            if (value.length < 8) {
+                                return "task must be at least 8 characters";
+                            }
+                            if (!/[A-Z]/.test(value)) {
+                                return "task must contain at least one uppercase letter";
+                            }
+                            if (!/[0-9]/.test(value)) {
+                                return "task must contain at least one number";
+                            }
+                            return null;
+                        }}
                     >
                         <Label>Task Name</Label>
                         <Input placeholder="Enter task name" />
+                               <FieldError />
                     </TextField>
                     <TextField
                         className="w-full"
@@ -103,7 +121,7 @@ const NewTask = () => {
                         </Button>
                         <Button type="submit">Submit Task</Button>
                     </Modal.Footer>
-                </form>
+                </Form>
             </div>
         </div>
     );
